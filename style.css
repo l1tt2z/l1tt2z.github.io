@@ -90,6 +90,10 @@ body {
   padding: 14px 16px 22px;
   background:
     linear-gradient(180deg, rgba(255, 236, 210, 0), rgba(255, 236, 210, 0.96) 28%, #ffe4bd 100%);
+
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
 }
 
 /* 通用按钮 */
@@ -488,4 +492,113 @@ body {
 .question-img.loading {
   opacity: 0.35;
   filter: blur(3px);
+}
+
+/* 参考资料页 */
+.page-source {
+  max-width: 520px;
+  margin: 0 auto;
+  padding-bottom: 120px;
+}
+
+.source-header {
+  width: 100%;
+  max-width: 430px;
+  margin: 0 auto 18px;
+  padding: 18px 16px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow:
+    0 12px 28px rgba(139, 70, 12, 0.16),
+    inset 0 0 0 2px rgba(255, 198, 128, 0.45);
+  text-align: center;
+}
+
+.source-title {
+  font-size: 24px;
+  font-weight: 1000;
+  color: #b92e12;
+  margin-bottom: 8px;
+}
+
+.source-subtitle {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #7a4a2a;
+  font-weight: 700;
+}
+
+.source-list {
+  width: 100%;
+  max-width: 430px;
+  margin: 0 auto;
+  display: grid;
+  gap: 16px;
+}
+
+.source-card {
+  padding: 14px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow:
+    0 12px 28px rgba(139, 70, 12, 0.14),
+    inset 0 0 0 2px rgba(255, 198, 128, 0.42);
+}
+
+.source-index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #ffe7c2;
+  color: #a74712;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.source-img-wrap {
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #f3dec3;
+  margin-bottom: 12px;
+}
+
+.source-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.source-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  border-radius: 14px;
+  background: #fff2dd;
+  border: 2px solid #f0b274;
+  color: #8a3b12;
+  font-size: 15px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.source-link:active {
+  transform: scale(0.98);
+}
+
+.source-bottom {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 12px 16px 18px;
+  background:
+    linear-gradient(180deg, rgba(255, 236, 210, 0), rgba(255, 236, 210, 0.96) 26%, #ffe4bd 100%);
 }

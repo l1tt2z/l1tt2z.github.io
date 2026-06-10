@@ -10,6 +10,7 @@ const imageCache = {};
 const questions = [
   {
     img: "https://ci.xiaohongshu.com/notes_pre_post/1040g3k83217jfg0j7a005pbln9p86bitvckm78o?imageView2/format/webp",
+    source: "https://www.xiaohongshu.com/discovery/item/6a28dfff0000000022008be8?source=webshare&xhsshare=pc_web&xsec_token=ABc4xpARmyMo4qe13tSqbpRKj0a9RybHbd2gfllS84G58=&xsec_source=pc_share",
     answer: "鹅腿",
     feedback: {
       correct: ["第一题就稳住了，有点鹅腿大师的苗头。", "这都能认出来，看来你不是普通路人。"],
@@ -18,6 +19,7 @@ const questions = [
   },
   {
     img: "https://ci.xiaohongshu.com/note_pre_post_uhdr/1040g3r83217qn7sink704abias1lg8t5khulkno?imageView2/format/webp",
+    source: "https://www.xiaohongshu.com/discovery/item/6a291bb3000000002100a89c?source=webshare&xhsshare=pc_web&xsec_token=ABD_1JktBjpGqnlVxD5oXVzK_3Q1AasAK6fq-It_9dvis=&xsec_source=pc_share",
     answer: "鸭腿",
     feedback: {
       correct: ["鸭腿没骗过你，这波可以。", "不错，这只鸭腿没有成功伪装。"],
@@ -26,6 +28,7 @@ const questions = [
   },
   {
     img: "https://ci.xiaohongshu.com/1040g2sg30rvj0r41io004a6uhalku3ip2ov66pg?imageView2/format/webp",
+    source: "https://www.xiaohongshu.com/discovery/item/65643fe2000000000f026454?source=webshare&xhsshare=pc_web&xsec_token=ABihKk52zfxhGg8EXrVALznpX5Nc8781DUdeXWm057ZXI=&xsec_source=pc_share",
     answer: "鹅腿",
     feedback: {
       correct: ["鹅腿被你拿下，继续保持。", "这题答对，说明你确实吃出经验了。"],
@@ -34,6 +37,7 @@ const questions = [
   },
   {
     img: "https://ci.xiaohongshu.com/note_pre_post_uhdr/1040g3r832183abedno005p7kcpf1meegeosvte0?imageView2/format/webp",
+    source: "https://www.xiaohongshu.com/discovery/item/6a29632b0000000015024279?source=webshare&xhsshare=pc_web&xsec_token=ABi0ZCc89mpZ5jZuHIIbVZTGe8W76pzBbKUwAd_rjHYL0=&xsec_source=pc_share",
     answer: "鸭腿",
     feedback: {
       correct: ["鸭腿识别成功，眼神在线。", "这题没被套路，值得表扬。"],
@@ -42,6 +46,7 @@ const questions = [
   },
   {
     img: "https://ci.xiaohongshu.com/1040g2sg3217ko6i47ue05o4hc0k0bso8gomq478?imageView2/format/webp",
+    source: "https://www.xiaohongshu.com/discovery/item/6a28eaa40000000007010d1a?source=webshare&xhsshare=pc_web&xsec_token=ABaD7rpDAiqx6bN6QIgLCidzNpCsv4d-qG7SBDnHOO_ro=&xsec_source=pc_share",
     answer: "鹅腿",
     feedback: {
       correct: ["不错，你已经开始有腿感了。", "鹅腿大师预备役正在加载。"],
@@ -50,6 +55,7 @@ const questions = [
   },
   {
     img: "https://ci.xiaohongshu.com/notes_pre_post/1040g3k831l9i1742le705n22rau1p25l7id3hn8?imageView2/format/webp",
+    source: "https://www.xiaohongshu.com/discovery/item/68a1a86a000000001d03a027?source=webshare&xhsshare=pc_web&xsec_token=ABOjMx4tCEB7pD5OlrOP9iQe0YWJTLNOhcP2XMT7MqNko=&xsec_source=pc_share",
     answer: "鸭腿",
     feedback: {
       correct: ["鸭腿被你识破了。", "这题稳，阿姨的套路没生效。"],
@@ -58,6 +64,7 @@ const questions = [
   },
   {
     img: "https://ci.xiaohongshu.com/note_pre_post_uhdr/1040g3r83217sdml4n00g5oum5a79ie5uoe1qq20?imageView2/format/webp",
+    source: "https://www.xiaohongshu.com/discovery/item/6a292d710000000022019ba3?source=webshare&xhsshare=pc_web&xsec_token=ABi0ZCc89mpZ5jZuHIIbVZTC65AgLPUyofGp-FqZVrRdo=&xsec_source=pc_share",
     answer: "鹅腿",
     feedback: {
       correct: ["行，这题有点大师气质。", "鹅腿认证通过。"],
@@ -66,6 +73,7 @@ const questions = [
   },
   {
     img: "https://ci.xiaohongshu.com/notes_pre_post/1040g3k831ipubpolhedg5or6h8v7rb5l1srur5g?imageView2/format/webp",
+    source: "https://www.xiaohongshu.com/discovery/item/685022b000000000210085af?source=webshare&xhsshare=pc_web&xsec_token=ABpomH9KWibdxtBsjUYxK-5jOrlTKJcoi8h6nWEl2UgAs=&xsec_source=pc_share",
     answer: "鸭腿",
     feedback: {
       correct: ["这只鸭腿逃不过你的眼睛。", "你已经不是当年的鸭腿冤种了。"],
@@ -74,6 +82,7 @@ const questions = [
   },
   {
     img: "https://ci.xiaohongshu.com/notes_uhdr/1040g3qg3217jemvf7o0g5q4ap8pa6v1a0i8erfg?imageView2/format/webp",
+    source: "https://www.xiaohongshu.com/discovery/item/6a28df010000000022014894?source=webshare&xhsshare=pc_web&xsec_token=ABaD7rpDAiqx6bN6QIgLCidxcJZciDE7aXICW3tJlFnCg=&xsec_source=pc_share",
     answer: "鹅腿",
     feedback: {
       correct: ["这波像高手。", "鹅腿大师之路又进了一步。"],
@@ -82,6 +91,7 @@ const questions = [
   },
   {
     img: "https://ci.xiaohongshu.com/1040g00830ue1881hl8004ajdoiputscbs7vme9o?imageView2/format/webp",
+    source: "https://www.xiaohongshu.com/discovery/item/65b493a1000000002c02922a?source=webshare&xhsshare=pc_web&xsec_token=ABVCr6aMr1nV-GQLHb7cfK27483wfTbHs8vmKoTbCSKpM=&xsec_source=pc_share",
     answer: "鸭腿",
     feedback: {
       correct: ["鸭腿 again，认对了。", "可以，你没被这只鸭腿拿下。"],
@@ -90,6 +100,7 @@ const questions = [
   },
   {
     img: "https://ci.xiaohongshu.com/1040g008320pih0m55m404bul3lpkvf6lbaudaeg?imageView2/format/webp",
+    source: "https://www.xiaohongshu.com/discovery/item/6a1a84ab000000000702375d?source=webshare&xhsshare=pc_web&xsec_token=ABmKxTG9jMdM13jSjU0ujidP0jm2-vLBSH4qLIfA08Rm4=&xsec_source=pc_share",
     answer: "鹅腿",
     feedback: {
       correct: ["最后阶段还能稳住，厉害。", "你已经接近鹅腿大师了。"],
@@ -98,6 +109,7 @@ const questions = [
   },
   {
     img: "https://ci.xiaohongshu.com/notes_pre_post/1040g3k83217un7fk7u705pd6gbai4ds2js7ahao?imageView2/format/webp",
+    source: "https://www.xiaohongshu.com/discovery/item/6a293c7f000000000702d05c?source=webshare&xhsshare=pc_web&xsec_token=ABi0ZCc89mpZ5jZuHIIbVZTLBSlPqJ6Q0w_f_09gq1Odg=&xsec_source=pc_share",
     answer: "鸭腿",
     feedback: {
       correct: ["收官题拿下，漂亮。", "这题答对，结果页可以体面一点。"],
@@ -115,6 +127,10 @@ const questionPage = document.getElementById("question-page");
 const resultPage = document.getElementById("result-page");
 
 const startBtn = document.getElementById("start-btn");
+const sourcePage = document.getElementById("source-page");
+const sourceBtn = document.getElementById("source-btn");
+const sourceBackBtn = document.getElementById("source-back-btn");
+const sourceList = document.getElementById("source-list");
 
 const questionImg = document.getElementById("question-img");
 const questionIndex = document.getElementById("question-index");
@@ -155,6 +171,62 @@ let lastPosterFile = null;
 questionTotal.innerText = `共 ${questions.length} 题`;
 
 startBtn.addEventListener("click", startGame);
+sourceBtn.addEventListener("click", () => {
+  renderSourceList();
+
+  startPage.classList.remove("active");
+  questionPage.classList.remove("active");
+  resultPage.classList.remove("active");
+  sourcePage.classList.add("active");
+
+  setTimeout(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, 30);
+});
+
+sourceBackBtn.addEventListener("click", () => {
+  sourcePage.classList.remove("active");
+  startPage.classList.add("active");
+
+  setTimeout(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, 30);
+});
+
+function renderSourceList() {
+  sourceList.innerHTML = "";
+
+  questions.forEach((item, index) => {
+    const sourceUrl = item.source || item.img;
+
+    const card = document.createElement("div");
+    card.className = "source-card";
+
+    card.innerHTML = `
+      <div class="source-index">图片 ${index + 1}</div>
+
+      <div class="source-img-wrap">
+        <img
+          class="source-img"
+          src="${item.img}"
+          alt="参考图片 ${index + 1}"
+          referrerpolicy="no-referrer"
+        />
+      </div>
+
+      <a
+        class="source-link"
+        href="${sourceUrl}"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        查看原始来源
+      </a>
+    `;
+
+    sourceList.appendChild(card);
+  });
+}
 
 optionButtons.forEach((btn) => {
   btn.addEventListener("click", () => {

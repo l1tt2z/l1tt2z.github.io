@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>你是鹅腿大师还是鸭腿冤种？</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <main class="app">
     <!-- 首页 -->
@@ -17,6 +19,27 @@
       <div class="start-action">
         <button id="start-btn" class="h5-btn primary-btn">
           点击开始鉴定
+        </button>
+        <button id="source-btn" class="h5-btn secondary-btn">
+          图片来源 / 参考资料
+        </button>
+      </div>
+    </section>
+
+    <!-- 参考资料页 -->
+    <section id="source-page" class="page page-source">
+      <div class="source-header">
+        <div class="source-title">图片来源 / 参考资料</div>
+        <div class="source-subtitle">
+          以下图片仅用于鹅鸭腿趣味鉴定小游戏展示，点击链接可查看原始来源。
+        </div>
+      </div>
+
+      <div id="source-list" class="source-list"></div>
+
+      <div class="source-bottom">
+        <button id="source-back-btn" class="h5-btn primary-btn">
+          返回首页
         </button>
       </div>
     </section>
@@ -98,4 +121,5 @@
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
   <script src="script.js"></script>
 </body>
+
 </html>
