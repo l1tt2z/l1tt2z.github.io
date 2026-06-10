@@ -5,9 +5,11 @@
 // images/goose(1).jpg
 // ======================
 
+const imageCache = {};
+
 const questions = [
   {
-    img: "images/goose(1).jpg",
+    img: "https://ci.xiaohongshu.com/notes_pre_post/1040g3k83217jfg0j7a005pbln9p86bitvckm78o?imageView2/format/webp",
     answer: "鹅腿",
     feedback: {
       correct: ["第一题就稳住了，有点鹅腿大师的苗头。", "这都能认出来，看来你不是普通路人。"],
@@ -15,7 +17,7 @@ const questions = [
     }
   },
   {
-    img: "images/duck(1).jpg",
+    img: "https://ci.xiaohongshu.com/note_pre_post_uhdr/1040g3r83217qn7sink704abias1lg8t5khulkno?imageView2/format/webp",
     answer: "鸭腿",
     feedback: {
       correct: ["鸭腿没骗过你，这波可以。", "不错，这只鸭腿没有成功伪装。"],
@@ -23,7 +25,7 @@ const questions = [
     }
   },
   {
-    img: "images/goose(2).jpg",
+    img: "https://ci.xiaohongshu.com/1040g2sg30rvj0r41io004a6uhalku3ip2ov66pg?imageView2/format/webp",
     answer: "鹅腿",
     feedback: {
       correct: ["鹅腿被你拿下，继续保持。", "这题答对，说明你确实吃出经验了。"],
@@ -31,7 +33,7 @@ const questions = [
     }
   },
   {
-    img: "images/duck(2).jpg",
+    img: "https://ci.xiaohongshu.com/note_pre_post_uhdr/1040g3r832183abedno005p7kcpf1meegeosvte0?imageView2/format/webp",
     answer: "鸭腿",
     feedback: {
       correct: ["鸭腿识别成功，眼神在线。", "这题没被套路，值得表扬。"],
@@ -39,7 +41,7 @@ const questions = [
     }
   },
   {
-    img: "images/goose(3).jpg",
+    img: "https://ci.xiaohongshu.com/1040g2sg3217ko6i47ue05o4hc0k0bso8gomq478?imageView2/format/webp",
     answer: "鹅腿",
     feedback: {
       correct: ["不错，你已经开始有腿感了。", "鹅腿大师预备役正在加载。"],
@@ -47,7 +49,7 @@ const questions = [
     }
   },
   {
-    img: "images/duck(3).jpg",
+    img: "https://ci.xiaohongshu.com/notes_pre_post/1040g3k831l9i1742le705n22rau1p25l7id3hn8?imageView2/format/webp",
     answer: "鸭腿",
     feedback: {
       correct: ["鸭腿被你识破了。", "这题稳，阿姨的套路没生效。"],
@@ -55,7 +57,7 @@ const questions = [
     }
   },
   {
-    img: "images/goose(4).jpg",
+    img: "https://ci.xiaohongshu.com/note_pre_post_uhdr/1040g3r83217sdml4n00g5oum5a79ie5uoe1qq20?imageView2/format/webp",
     answer: "鹅腿",
     feedback: {
       correct: ["行，这题有点大师气质。", "鹅腿认证通过。"],
@@ -63,7 +65,7 @@ const questions = [
     }
   },
   {
-    img: "images/duck(4).jpg",
+    img: "https://ci.xiaohongshu.com/notes_pre_post/1040g3k831ipubpolhedg5or6h8v7rb5l1srur5g?imageView2/format/webp",
     answer: "鸭腿",
     feedback: {
       correct: ["这只鸭腿逃不过你的眼睛。", "你已经不是当年的鸭腿冤种了。"],
@@ -71,7 +73,7 @@ const questions = [
     }
   },
   {
-    img: "images/goose(5).jpg",
+    img: "https://ci.xiaohongshu.com/notes_uhdr/1040g3qg3217jemvf7o0g5q4ap8pa6v1a0i8erfg?imageView2/format/webp",
     answer: "鹅腿",
     feedback: {
       correct: ["这波像高手。", "鹅腿大师之路又进了一步。"],
@@ -79,7 +81,7 @@ const questions = [
     }
   },
   {
-    img: "images/duck(5).jpg",
+    img: "https://ci.xiaohongshu.com/1040g00830ue1881hl8004ajdoiputscbs7vme9o?imageView2/format/webp",
     answer: "鸭腿",
     feedback: {
       correct: ["鸭腿 again，认对了。", "可以，你没被这只鸭腿拿下。"],
@@ -87,7 +89,7 @@ const questions = [
     }
   },
   {
-    img: "images/goose(6).jpg",
+    img: "https://ci.xiaohongshu.com/1040g008320pih0m55m404bul3lpkvf6lbaudaeg?imageView2/format/webp",
     answer: "鹅腿",
     feedback: {
       correct: ["最后阶段还能稳住，厉害。", "你已经接近鹅腿大师了。"],
@@ -95,7 +97,7 @@ const questions = [
     }
   },
   {
-    img: "images/duck(6).jpg",
+    img: "https://ci.xiaohongshu.com/notes_pre_post/1040g3k83217un7fk7u705pd6gbai4ds2js7ahao?imageView2/format/webp",
     answer: "鸭腿",
     feedback: {
       correct: ["收官题拿下，漂亮。", "这题答对，结果页可以体面一点。"],
@@ -257,7 +259,7 @@ function shuffle(array) {
   }
 }
 
-function startGame() {
+async function startGame() {
   shuffle(questions);
   currentQuestion = 0;
   score = 0;
@@ -270,11 +272,25 @@ function startGame() {
   showQuestion();
 }
 
-function showQuestion() {
-  locked = false;
+function loadImage(src) {
+  return new Promise((resolve) => {
+    const img = new Image();
+
+    // 对小红书/外链图片，尝试不带 Referer
+    img.referrerPolicy = "no-referrer";
+
+    img.onload = () => resolve(true);
+    img.onerror = () => resolve(false);
+
+    img.src = src;
+  });
+}
+
+async function showQuestion() {
+  locked = true;
 
   const q = questions[currentQuestion];
-  questionImg.src = q.img;
+  const next = questions[currentQuestion + 1];
 
   questionIndex.innerText = `第 ${currentQuestion + 1} 题`;
   liveScore.innerText = `已答对 ${score} 题`;
@@ -282,12 +298,30 @@ function showQuestion() {
   const progress = (currentQuestion / questions.length) * 100;
   progressInner.style.width = `${progress}%`;
 
+  feedbackEl.innerText = "图片加载中...";
+  questionImg.classList.add("loading");
+
+  optionButtons.forEach((btn) => {
+    btn.disabled = true;
+    btn.classList.remove("correct", "wrong");
+  });
+
+  // 等 img 标签加载完
+  await new Promise((resolve) => {
+    questionImg.onload = resolve;
+    questionImg.onerror = resolve;
+    questionImg.referrerPolicy = "no-referrer";
+    questionImg.src = q.img;
+  });
+
+  questionImg.classList.remove("loading");
   feedbackEl.innerText = "别犹豫，凭第一感觉选。";
 
   optionButtons.forEach((btn) => {
     btn.disabled = false;
-    btn.classList.remove("correct", "wrong");
   });
+
+  locked = false;
 }
 
 function answerQuestion(selected, clickedButton) {
