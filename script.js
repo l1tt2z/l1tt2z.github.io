@@ -126,7 +126,6 @@ const optionButtons = document.querySelectorAll(".option-btn");
 
 const resultBg = document.getElementById("result-bg");
 const finalScoreEl = document.getElementById("final-score");
-const resultSummary = document.getElementById("result-summary");
 
 const saveBtn = document.getElementById("save-btn");
 const shareBtn = document.getElementById("share-btn");
@@ -172,24 +171,22 @@ saveBtn.addEventListener("click", async () => {
     return;
   }
 
-  const { blob, dataUrl } = result;
+  const { blob } = result;
+
   lastPosterBlob = blob;
   lastPosterFile = new File([blob], `鹅鸭腿鉴定结果-${score}分.png`, {
     type: "image/png"
   });
 
-  // PC / 部分安卓浏览器可直接下载
-  const downloaded = tryDownloadBlob(blob, `鹅鸭腿鉴定结果-${score}分.png`);
+  // 先尝试直接下载
+  tryDownloadBlob(blob, `鹅鸭腿鉴定结果-${score}分.png`);
 
-  // 手机微信/部分浏览器下载不稳定，直接展示预览，长按保存
-  posterPreview.src = dataUrl;
+  // 再展示预览图，方便手机端长按
+  const previewUrl = URL.createObjectURL(blob);
+  posterPreview.src = previewUrl;
   posterModal.classList.add("show");
 
-  if (downloaded) {
-    showToast("结果图已生成，也可以长按图片保存");
-  } else {
-    showToast("长按图片即可保存结果图");
-  }
+  showToast("已生成结果图，可点击下载或长按图片保存");
 });
 
 shareBtn.addEventListener("click", async () => {
@@ -402,7 +399,6 @@ function showResult() {
 
   const scoreText = `${score} / ${questions.length}`;
   finalScoreEl.innerText = scoreText;
-  // resultSummary.innerText = scoreText;
 
   setTimeout(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
