@@ -482,7 +482,10 @@ function showResult() {
 // ======================
 
 async function generatePosterBlob() {
+  const qrEl = document.getElementById("poster-qr");
+
   await waitForImageLoaded(resultBg);
+  await waitForImageLoaded(qrEl);
 
   // 等字体和布局稳定
   if (document.fonts && document.fonts.ready) {

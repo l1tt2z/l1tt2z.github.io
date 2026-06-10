@@ -602,3 +602,29 @@ body {
   background:
     linear-gradient(180deg, rgba(255, 236, 210, 0), rgba(255, 236, 210, 0.96) 26%, #ffe4bd 100%);
 }
+
+.poster-modal-content {
+  position: relative; /* 让二维码可以绝对定位 */
+  text-align: center;
+}
+
+.poster-qr-box {
+  position: absolute;
+  right: 7%;
+  bottom: 3.5%;
+  width: 13%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(92, 39, 8, 0.22);
+  z-index: 5;
+}
+
+.poster-qr {
+  width: 124%;
+  height: 124%;
+  object-fit: cover;
+  transform: translate(-10%, -10%);
+  display: block;
+}
