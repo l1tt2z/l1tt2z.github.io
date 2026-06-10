@@ -3,7 +3,7 @@ name: Deploy GitHub Pages
 on:
   push:
     branches:
-      - main  # 你仓库的默认分支
+      - main
   workflow_dispatch:
 
 permissions:
@@ -12,29 +12,20 @@ permissions:
   id-token: write
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
       # 1. 检出仓库
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      # 2. 设置 Node.js（可选，仅用于 future 构建，纯静态可以忽略）
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      # 2. 上传所有静态文件作为 artifact
+      - name: Upload artifact for GitHub Pages
+        uses: actions/upload-pages-artifact@v1
         with:
-          node-version: 20
+          path: .  # 如果你有构建目录，比如 build/ 或 docs/ 可以改成对应目录
 
-      # 3. 构建步骤（纯静态可省略）
-      # - run: npm install
-      # - run: npm run build
-
-      # 4. 部署到 GitHub Pages
+      # 3. 部署 Pages
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v5
-        with:
-          token: ${{ github.token }}
-
-      # 5. 可选：输出部署信息
-      - name: Deployment Info
-        run: echo "✅ GitHub Pages deployed successfully!"
