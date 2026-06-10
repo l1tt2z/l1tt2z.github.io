@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>你是鹅腿大师还是鸭腿冤种？</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <!-- 首页 -->
+    <section id="start-page" class="page page-start active">
+      <div class="cover-wrap">
+        <img class="cover-img" src="assets/cover.png" alt="鹅鸭腿鉴定局" />
+      </div>
+
+      <div class="start-action">
+        <button id="start-btn" class="h5-btn primary-btn">
+          点击开始鉴定
+        </button>
+      </div>
+    </section>
+
+    <!-- 题目页 -->
+    <section id="question-page" class="page page-question">
+      <div class="top-bar">
+        <div>
+          <span id="question-index">第 1 题</span>
+          <span class="slash">/</span>
+          <span id="question-total">共 12 题</span>
+        </div>
+        <div id="live-score">已答对 0 题</div>
+      </div>
+
+      <div class="progress-wrap">
+        <div id="progress-inner" class="progress-inner"></div>
+      </div>
+
+      <div class="quiz-card">
+        <div class="question-badge">请鉴定这一腿</div>
+
+        <div class="image-wrap">
+          <img id="question-img" class="question-img" src="" alt="题目图片" />
+        </div>
+
+        <div class="option-grid">
+          <button class="option-btn" data-answer="鹅腿">
+            <span class="option-icon">🪿</span>
+            <span>鹅腿</span>
+          </button>
+          <button class="option-btn" data-answer="鸭腿">
+            <span class="option-icon">🦆</span>
+            <span>鸭腿</span>
+          </button>
+        </div>
+
+        <div id="feedback" class="feedback"></div>
+      </div>
+    </section>
+
+    <!-- 结果页 -->
+    <section id="result-page" class="page page-result">
+      <div class="result-header">
+        <div class="result-small-title">你的鉴定结果</div>
+        <div id="result-summary" class="result-summary">6 / 12</div>
+      </div>
+
+      <div class="poster-shell">
+        <!-- 这个区域会被导出成最终结果图 -->
+        <div id="share-card" class="share-card">
+          <img id="result-bg" class="result-bg" src="" alt="结果海报" />
+
+          <!-- 只覆盖具体得分 -->
+          <div class="poster-overlay">
+            <div class="exact-score">
+              <span id="final-score">6 / 12</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-panel">
+        <button id="save-btn" class="h5-btn primary-btn">保存结果图</button>
+        <button id="share-btn" class="h5-btn secondary-btn">分享给朋友</button>
+        <button id="restart-btn" class="text-btn">再测一次</button>
+      </div>
+    </section>
+
+    <!-- 保存预览弹层 -->
+    <div id="poster-modal" class="poster-modal">
+      <div class="poster-modal-mask"></div>
+      <div class="poster-modal-content">
+        <div class="poster-modal-title">长按图片保存结果图</div>
+        <img id="poster-preview" class="poster-preview" src="" alt="结果图预览" />
+        <button id="close-modal-btn" class="h5-btn secondary-btn">关闭</button>
+      </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

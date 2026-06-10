@@ -1,0 +1,486 @@
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family:
+    "PingFang SC",
+    "Microsoft YaHei",
+    "Hiragino Sans GB",
+    Arial,
+    sans-serif;
+  background: #ffedd6;
+  color: #4a240e;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 10% 5%, rgba(255, 255, 255, 0.75), transparent 22%),
+    radial-gradient(circle at 90% 8%, rgba(255, 190, 90, 0.45), transparent 26%),
+    linear-gradient(180deg, #fff4df 0%, #ffd49d 52%, #ffb86b 100%);
+}
+
+.page {
+  display: none;
+  width: 100%;
+  min-height: 100vh;
+  padding: 16px 16px 34px;
+  position: relative;
+}
+
+.page.active {
+  display: block;
+  animation: pageIn 0.28s ease both;
+}
+
+@keyframes pageIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 首页 */
+.page-start {
+  max-width: 520px;
+  margin: 0 auto;
+  padding-bottom: 120px;
+}
+
+.cover-wrap {
+  width: 100%;
+  max-width: 430px;
+  margin: 0 auto;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow:
+    0 18px 42px rgba(143, 72, 12, 0.22),
+    0 0 0 3px rgba(255, 207, 144, 0.65);
+  background: #fff4df;
+}
+
+.cover-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.start-action {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 14px 16px 22px;
+  background:
+    linear-gradient(180deg, rgba(255, 236, 210, 0), rgba(255, 236, 210, 0.96) 28%, #ffe4bd 100%);
+}
+
+/* 通用按钮 */
+.h5-btn {
+  width: 100%;
+  border: none;
+  border-radius: 18px;
+  min-height: 52px;
+  font-size: 18px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: transform 0.16s ease, filter 0.16s ease;
+}
+
+.h5-btn:active {
+  transform: scale(0.98);
+}
+
+.primary-btn {
+  color: #fff;
+  background:
+    linear-gradient(180deg, #ff9b34 0%, #ff641f 100%);
+  box-shadow: 0 10px 20px rgba(224, 82, 20, 0.28);
+}
+
+.secondary-btn {
+  color: #a94812;
+  background: #fff7ea;
+  border: 2px solid #f0a45c;
+}
+
+/* 题目页 */
+.page-question {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #6d3b1c;
+  font-weight: 800;
+  font-size: 14px;
+  margin: 4px auto 12px;
+  max-width: 440px;
+}
+
+.slash {
+  opacity: 0.5;
+  margin: 0 4px;
+}
+
+.progress-wrap {
+  width: 100%;
+  max-width: 440px;
+  height: 10px;
+  margin: 0 auto 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.65);
+  overflow: hidden;
+  box-shadow: inset 0 1px 4px rgba(113, 62, 20, 0.18);
+}
+
+.progress-inner {
+  width: 0%;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ffb23c, #f0521b);
+  transition: width 0.28s ease;
+}
+
+.quiz-card {
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 16px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow:
+    0 16px 36px rgba(139, 70, 12, 0.18),
+    inset 0 0 0 2px rgba(255, 198, 128, 0.5);
+}
+
+.question-badge {
+  width: fit-content;
+  margin: 0 auto 12px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: #ffe7c2;
+  color: #ac4b13;
+  font-weight: 900;
+  font-size: 15px;
+}
+
+.image-wrap {
+  position: relative;
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #f3dec3;
+  box-shadow: inset 0 0 0 2px rgba(126, 64, 16, 0.08);
+}
+
+.image-wrap::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.question-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.option-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.option-btn {
+  min-height: 64px;
+  border: none;
+  border-radius: 20px;
+  background: #fff2dd;
+  color: #7c3612;
+  border: 2px solid #f0b274;
+  font-size: 20px;
+  font-weight: 900;
+  box-shadow: 0 8px 16px rgba(143, 72, 12, 0.12);
+  cursor: pointer;
+  transition: all 0.16s ease;
+}
+
+.option-btn:active {
+  transform: scale(0.97);
+}
+
+.option-btn.correct {
+  background: #eaffdc;
+  border-color: #7ac84a;
+  color: #2f7c18;
+}
+
+.option-btn.wrong {
+  background: #ffe1dc;
+  border-color: #ff705d;
+  color: #b52a18;
+}
+
+.option-btn:disabled {
+  opacity: 0.9;
+}
+
+.option-icon {
+  display: block;
+  font-size: 23px;
+  margin-bottom: 2px;
+}
+
+.feedback {
+  min-height: 46px;
+  margin-top: 16px;
+  padding: 10px 12px;
+  border-radius: 16px;
+  background: #fff7ec;
+  color: #8b3512;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.6;
+  font-weight: 800;
+}
+
+/* 结果页 */
+.page-result {
+  max-width: 520px;
+  margin: 0 auto;
+  padding-bottom: 150px;
+}
+
+.result-header {
+  text-align: center;
+  margin: 2px 0 14px;
+}
+
+.result-small-title {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  color: #924417;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.result-summary {
+  margin-top: 8px;
+  font-size: 28px;
+  line-height: 1;
+  color: #c33413;
+  font-weight: 1000;
+}
+
+.poster-shell {
+  width: 100%;
+  max-width: 430px;
+  margin: 0 auto;
+}
+
+.share-card {
+  position: relative;
+  width: 100%;
+  border-radius: 28px;
+  overflow: hidden;
+  background: #fff4df;
+  box-shadow:
+    0 16px 40px rgba(128, 66, 15, 0.24),
+    0 0 0 3px rgba(255, 207, 144, 0.6);
+}
+
+.result-bg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.poster-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/*
+  只在图片上方覆盖具体分数。
+  这个位置对应你结果图中上方空白得分框。
+  如果位置不准，只调 top 即可。
+*/
+.exact-score {
+  position: absolute;
+  top: 33%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 78%;
+  height: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.exact-score span {
+  display: inline-block;
+  font-size: clamp(42px, 13vw, 68px);
+  line-height: 1;
+  font-weight: 1000;
+  color: #ff6818;
+  text-shadow:
+    -3px -3px 0 #fff,
+    3px -3px 0 #fff,
+    -3px 3px 0 #fff,
+    3px 3px 0 #fff,
+    0 8px 16px rgba(92, 39, 8, 0.25);
+  letter-spacing: -1px;
+}
+
+.action-panel {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 12px 16px 18px;
+  background:
+    linear-gradient(180deg, rgba(255, 236, 210, 0), rgba(255, 236, 210, 0.96) 26%, #ffe4bd 100%);
+  display: grid;
+  gap: 10px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.text-btn {
+  border: none;
+  background: transparent;
+  color: #8a4318;
+  font-size: 15px;
+  font-weight: 800;
+  padding: 6px;
+  cursor: pointer;
+}
+
+/* 保存预览弹层 */
+.poster-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+}
+
+.poster-modal.show {
+  display: block;
+}
+
+.poster-modal-mask {
+  position: absolute;
+  inset: 0;
+  background: rgba(55, 25, 6, 0.72);
+}
+
+.poster-modal-content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(88vw, 420px);
+  max-height: 88vh;
+  transform: translate(-50%, -50%);
+  background: #fff2df;
+  border-radius: 22px;
+  padding: 14px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+  text-align: center;
+}
+
+.poster-modal-title {
+  font-weight: 900;
+  color: #8f3f13;
+  margin: 2px 0 10px;
+}
+
+.poster-preview {
+  display: block;
+  width: 100%;
+  max-height: 68vh;
+  object-fit: contain;
+  border-radius: 16px;
+  margin-bottom: 12px;
+  background: #fff;
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 128px;
+  transform: translateX(-50%) translateY(10px);
+  max-width: 82%;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(62, 28, 8, 0.88);
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.4;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  z-index: 120;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.result-summary {
+  display: none;
+}
+
+.exact-score {
+  position: absolute;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 78%;
+  height: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.exact-score span {
+  display: inline-block;
+  font-size: clamp(42px, 13vw, 68px);
+  line-height: 1;
+  font-weight: 1000;
+  color: #ff6818;
+  text-shadow:
+    -3px -3px 0 #fff,
+    3px -3px 0 #fff,
+    -3px 3px 0 #fff,
+    3px 3px 0 #fff,
+    0 8px 16px rgba(92, 39, 8, 0.25);
+  letter-spacing: -1px;
+}
