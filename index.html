@@ -84,17 +84,17 @@
     <!-- 结果页 -->
     <section id="result-page" class="page page-result">
 
+      <div id="result-summary" class="result-summary" aria-live="polite">
+        <div class="result-summary-label">本次鉴定结果</div>
+        <div id="final-score-text" class="result-summary-score">你答对了 6 / 12 题</div>
+      </div>
+
       <div class="poster-shell">
         <!-- 这个区域会被导出成最终结果图 -->
         <div id="share-card" class="share-card">
           <img id="result-bg" class="result-bg" src="" alt="结果海报" />
 
-          <!-- 只覆盖具体得分 -->
           <div class="poster-overlay">
-            <div class="exact-score">
-              <span id="final-score">6 / 12</span>
-            </div>
-
             <div class="poster-qr-box">
               <img id="poster-qr" class="poster-qr" src="assets/qr-code.jpg" alt="二维码" />
             </div>

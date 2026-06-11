@@ -153,7 +153,7 @@ const feedbackEl = document.getElementById("feedback");
 const optionButtons = document.querySelectorAll(".option-btn");
 
 const resultBg = document.getElementById("result-bg");
-const finalScoreEl = document.getElementById("final-score");
+const finalScoreTextEl = document.getElementById("final-score-text");
 
 const saveBtn = document.getElementById("save-btn");
 const shareBtn = document.getElementById("share-btn");
@@ -475,41 +475,59 @@ function answerQuestion(selected, clickedButton) {
 // 结果配置
 // ======================
 
-const RESULT_IMAGES = {
-  low: "assets/results/result-low.png",
-  midlow: "assets/results/result-midlow.png",
-  mid: "assets/results/result-mid.png",
-  high: "assets/results/result-high.png",
-  perfect: "assets/results/result-perfect.png"
+const RESULT_CONFIGS = {
+  low: {
+    image: "assets/results/result-low.png",
+    qr: { right: "8.45%", bottom: "4.6%", size: "22%" }
+  },
+  midlow: {
+    image: "assets/results/result-midlow.png",
+    qr: { right: "8.77%", bottom: "4.16%", size: "22%" }
+  },
+  mid: {
+    image: "assets/results/result-mid.png",
+    qr: { right: "10.31%", bottom: "4.54%", size: "22%" }
+  },
+  high: {
+    image: "assets/results/result-high.png",
+    qr: { right: "10.89%", bottom: "4.54%", size: "22%" }
+  },
+  perfect: {
+    image: "assets/results/result-perfect.png",
+    qr: { right: "8.39%", bottom: "2.6%", size: "22%" }
+  }
 };
 
-function getResultImage(score) {
-  if (score <= 5) return RESULT_IMAGES.low;
-  if (score <= 7) return RESULT_IMAGES.midlow;
-  if (score <= 9) return RESULT_IMAGES.mid;
-  if (score <= 11) return RESULT_IMAGES.high;
-  return RESULT_IMAGES.perfect;
+function getResultConfig(score) {
+  if (score <= 5) return RESULT_CONFIGS.low;
+  if (score <= 7) return RESULT_CONFIGS.midlow;
+  if (score <= 9) return RESULT_CONFIGS.mid;
+  if (score <= 11) return RESULT_CONFIGS.high;
+  return RESULT_CONFIGS.perfect;
 }
 
 function showResult() {
   questionPage.classList.remove("active");
   resultPage.classList.add("active");
 
-  const resultImage = getResultImage(score);
+  const resultConfig = getResultConfig(score);
 
   resultBg.onload = () => {
-    console.log("结果图加载成功：", resultImage);
+    console.log("结果图加载成功：", resultConfig.image);
   };
 
   resultBg.onerror = () => {
-    console.error("结果图加载失败：", resultImage);
-    showToast(`结果图加载失败：${resultImage}`);
+    console.error("结果图加载失败：", resultConfig.image);
+    showToast(`结果图加载失败：${resultConfig.image}`);
   };
 
-  resultBg.src = resultImage;
+  shareCard.style.setProperty("--poster-qr-right", resultConfig.qr.right);
+  shareCard.style.setProperty("--poster-qr-bottom", resultConfig.qr.bottom);
+  shareCard.style.setProperty("--poster-qr-size", resultConfig.qr.size);
 
-  const scoreText = `${score} / ${questions.length}`;
-  finalScoreEl.innerText = scoreText;
+  resultBg.src = resultConfig.image;
+
+  finalScoreTextEl.innerText = `你答对了 ${score} / ${questions.length} 题`;
 
   setTimeout(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
