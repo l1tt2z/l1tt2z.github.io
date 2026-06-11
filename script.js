@@ -542,7 +542,7 @@ async function generatePosterBlob() {
       logging: false
     });
 
-    const dataUrl = canvas.toDataURL("image/png");
+    const dataUrl = canvas.toDataURL("image/jpeg", 0.92);
 
     return new Promise((resolve) => {
       canvas.toBlob((blob) => {
@@ -555,7 +555,7 @@ async function generatePosterBlob() {
           blob,
           dataUrl
         });
-      }, "image/png");
+      }, "image/jpeg", 0.92);
     });
   } catch (error) {
     console.error("生成海报失败：", error);
