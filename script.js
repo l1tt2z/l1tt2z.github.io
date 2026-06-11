@@ -12,15 +12,17 @@ const questions = [
     img: "https://ci.xiaohongshu.com/notes_pre_post/1040g3k83217jfg0j7a005pbln9p86bitvckm78o?imageView2/format/webp",
     source: "https://www.xiaohongshu.com/discovery/item/6a28dfff0000000022008be8?source=webshare&xhsshare=pc_web&xsec_token=ABc4xpARmyMo4qe13tSqbpRKj0a9RybHbd2gfllS84G58=&xsec_source=pc_share",
     answer: "鹅腿",
+    title: "广东人围观鹅腿阿姨事件 - 精分黄女士",
     feedback: {
-      correct: ["第一题就稳住了，有点鹅腿大师的苗头。", "这都能认出来，看来你不是普通路人。"],
-      wrong: ["第一题就开始迷糊了，阿姨已经在微笑。", "鹅鸭在你眼里，可能主打一个平等。"]
+      correct: ["这就稳住了，有点鹅腿大师的苗头。", "这都能认出来，看来你不是普通路人。"],
+      wrong: ["这就开始迷糊了，阿姨已经在微笑。", "鹅鸭在你眼里，可能主打一个平等。"]
     }
   },
   {
     img: "https://ci.xiaohongshu.com/note_pre_post_uhdr/1040g3r83217qn7sink704abias1lg8t5khulkno?imageView2/format/webp",
     source: "https://www.xiaohongshu.com/discovery/item/6a291bb3000000002100a89c?source=webshare&xhsshare=pc_web&xsec_token=ABD_1JktBjpGqnlVxD5oXVzK_3Q1AasAK6fq-It_9dvis=&xsec_source=pc_share",
     answer: "鸭腿",
+    title: "鹅腿阿姨你对得起我吗 - momorphism",
     feedback: {
       correct: ["鸭腿没骗过你，这波可以。", "不错，这只鸭腿没有成功伪装。"],
       wrong: ["这其实是鸭腿，阿姨看了直点头。", "你刚刚离鸭腿冤种又近了一步。"]
@@ -30,6 +32,7 @@ const questions = [
     img: "https://ci.xiaohongshu.com/1040g2sg30rvj0r41io004a6uhalku3ip2ov66pg?imageView2/format/webp",
     source: "https://www.xiaohongshu.com/discovery/item/65643fe2000000000f026454?source=webshare&xhsshare=pc_web&xsec_token=ABihKk52zfxhGg8EXrVALznpX5Nc8781DUdeXWm057ZXI=&xsec_source=pc_share",
     answer: "鹅腿",
+    title: "中国人民大学烤鹅腿将于今天（11月27日）下午16:30起，在北区食堂三层供应。 - 祚荣",
     feedback: {
       correct: ["鹅腿被你拿下，继续保持。", "这题答对，说明你确实吃出经验了。"],
       wrong: ["错啦，鹅腿都替你着急。", "你是不是只负责吃，不负责认？"]
@@ -39,6 +42,7 @@ const questions = [
     img: "https://ci.xiaohongshu.com/note_pre_post_uhdr/1040g3r832183abedno005p7kcpf1meegeosvte0?imageView2/format/webp",
     source: "https://www.xiaohongshu.com/discovery/item/6a29632b0000000015024279?source=webshare&xhsshare=pc_web&xsec_token=ABi0ZCc89mpZ5jZuHIIbVZTGe8W76pzBbKUwAd_rjHYL0=&xsec_source=pc_share",
     answer: "鸭腿",
+    title: "我也蹭热度-做个烤鸭腿 - 门神",
     feedback: {
       correct: ["鸭腿识别成功，眼神在线。", "这题没被套路，值得表扬。"],
       wrong: ["鸭腿又把你骗了。", "这波阿姨愿称你为潜在客户。"]
@@ -48,6 +52,7 @@ const questions = [
     img: "https://ci.xiaohongshu.com/1040g2sg3217ko6i47ue05o4hc0k0bso8gomq478?imageView2/format/webp",
     source: "https://www.xiaohongshu.com/discovery/item/6a28eaa40000000007010d1a?source=webshare&xhsshare=pc_web&xsec_token=ABaD7rpDAiqx6bN6QIgLCidzNpCsv4d-qG7SBDnHOO_ro=&xsec_source=pc_share",
     answer: "鹅腿",
+    title: "被北京鸭腿老妖婆气晕，来吃个真鹅腿 - 麦修Marcel",
     feedback: {
       correct: ["不错，你已经开始有腿感了。", "鹅腿大师预备役正在加载。"],
       wrong: ["鹅腿都这么明显了，你还犹豫？", "这题错得很有生活气息。"]
@@ -57,6 +62,7 @@ const questions = [
     img: "https://ci.xiaohongshu.com/notes_pre_post/1040g3k831l9i1742le705n22rau1p25l7id3hn8?imageView2/format/webp",
     source: "https://www.xiaohongshu.com/discovery/item/68a1a86a000000001d03a027?source=webshare&xhsshare=pc_web&xsec_token=ABOjMx4tCEB7pD5OlrOP9iQe0YWJTLNOhcP2XMT7MqNko=&xsec_source=pc_share",
     answer: "鸭腿",
+    title: "谁懂这一口烤鸭腿的含金量！！！香炸了！！！ - M.🌸",
     feedback: {
       correct: ["鸭腿被你识破了。", "这题稳，阿姨的套路没生效。"],
       wrong: ["又错啦，鸭腿正在偷笑。", "你这个判断，鸭腿听了都感动。"]
@@ -66,6 +72,7 @@ const questions = [
     img: "https://ci.xiaohongshu.com/note_pre_post_uhdr/1040g3r83217sdml4n00g5oum5a79ie5uoe1qq20?imageView2/format/webp",
     source: "https://www.xiaohongshu.com/discovery/item/6a292d710000000022019ba3?source=webshare&xhsshare=pc_web&xsec_token=ABi0ZCc89mpZ5jZuHIIbVZTC65AgLPUyofGp-FqZVrRdo=&xsec_source=pc_share",
     answer: "鹅腿",
+    title: "给北京朋友看看广州烧鹅腿 - 饮粤（无滤镜探店版）",
     feedback: {
       correct: ["行，这题有点大师气质。", "鹅腿认证通过。"],
       wrong: ["鹅腿被你认成鸭腿，鹅表示不服。", "看来你平时真的只顾着香了。"]
@@ -75,6 +82,7 @@ const questions = [
     img: "https://ci.xiaohongshu.com/notes_pre_post/1040g3k831ipubpolhedg5or6h8v7rb5l1srur5g?imageView2/format/webp",
     source: "https://www.xiaohongshu.com/discovery/item/685022b000000000210085af?source=webshare&xhsshare=pc_web&xsec_token=ABpomH9KWibdxtBsjUYxK-5jOrlTKJcoi8h6nWEl2UgAs=&xsec_source=pc_share",
     answer: "鸭腿",
+    title: "巨简单的空气炸锅鸭腿 - 😸",
     feedback: {
       correct: ["这只鸭腿逃不过你的眼睛。", "你已经不是当年的鸭腿冤种了。"],
       wrong: ["错啦，这题是鸭腿。", "阿姨：这个顾客我熟。"]
@@ -84,6 +92,7 @@ const questions = [
     img: "https://ci.xiaohongshu.com/notes_uhdr/1040g3qg3217jemvf7o0g5q4ap8pa6v1a0i8erfg?imageView2/format/webp",
     source: "https://www.xiaohongshu.com/discovery/item/6a28df010000000022014894?source=webshare&xhsshare=pc_web&xsec_token=ABaD7rpDAiqx6bN6QIgLCidxcJZciDE7aXICW3tJlFnCg=&xsec_source=pc_share",
     answer: "鹅腿",
+    title: "真正的鹅腿可能只存在广东吧 - 钱景一片大好",
     feedback: {
       correct: ["这波像高手。", "鹅腿大师之路又进了一步。"],
       wrong: ["鹅腿：我都这么努力了。", "你离满分越来越远，离阿姨越来越近。"]
@@ -93,6 +102,7 @@ const questions = [
     img: "https://ci.xiaohongshu.com/1040g00830ue1881hl8004ajdoiputscbs7vme9o?imageView2/format/webp",
     source: "https://www.xiaohongshu.com/discovery/item/65b493a1000000002c02922a?source=webshare&xhsshare=pc_web&xsec_token=ABVCr6aMr1nV-GQLHb7cfK27483wfTbHs8vmKoTbCSKpM=&xsec_source=pc_share",
     answer: "鸭腿",
+    title: " 小陈小陈满眼星辰 ",
     feedback: {
       correct: ["鸭腿 again，认对了。", "可以，你没被这只鸭腿拿下。"],
       wrong: ["鸭腿：谢谢你的信任。", "这题错得很适合发朋友圈。"]
@@ -102,18 +112,20 @@ const questions = [
     img: "https://ci.xiaohongshu.com/1040g008320pih0m55m404bul3lpkvf6lbaudaeg?imageView2/format/webp",
     source: "https://www.xiaohongshu.com/discovery/item/6a1a84ab000000000702375d?source=webshare&xhsshare=pc_web&xsec_token=ABmKxTG9jMdM13jSjU0ujidP0jm2-vLBSH4qLIfA08Rm4=&xsec_source=pc_share",
     answer: "鹅腿",
+    title: "在广州，我不允许还有人没吃过这只烧鹅腿！ - 小孩曾卓君",
     feedback: {
-      correct: ["最后阶段还能稳住，厉害。", "你已经接近鹅腿大师了。"],
-      wrong: ["快结束了还被套路，节目效果有了。", "鹅腿表示：我真的不是鸭腿。"]
+      correct: ["还能稳住，厉害。", "你已经接近鹅腿大师了。"],
+      wrong: ["还在被套路，节目效果有了。", "鹅腿表示：我真的不是鸭腿。"]
     }
   },
   {
     img: "https://ci.xiaohongshu.com/notes_pre_post/1040g3k83217un7fk7u705pd6gbai4ds2js7ahao?imageView2/format/webp",
     source: "https://www.xiaohongshu.com/discovery/item/6a293c7f000000000702d05c?source=webshare&xhsshare=pc_web&xsec_token=ABi0ZCc89mpZ5jZuHIIbVZTLBSlPqJ6Q0w_f_09gq1Odg=&xsec_source=pc_share",
     answer: "鸭腿",
+    title: "不如来个真鸭腿 - mo酱慢慢来",
     feedback: {
-      correct: ["收官题拿下，漂亮。", "这题答对，结果页可以体面一点。"],
-      wrong: ["最后一题也错，阿姨正在鼓掌。", "结局已定，鸭腿冤种浓度上升。"]
+      correct: ["拿下，漂亮。", "这题答对，结果页可以体面一点。"],
+      wrong: ["这也错，阿姨正在鼓掌。", "结局将至，鸭腿冤种浓度上升。"]
     }
   }
 ];
@@ -198,6 +210,9 @@ function renderSourceList() {
 
   questions.forEach((item, index) => {
     const sourceUrl = item.source || item.img;
+    const title = item.title && item.title.trim()
+      ? item.title.trim()
+      : "小红书用户发布内容";
 
     const card = document.createElement("div");
     card.className = "source-card";
@@ -214,18 +229,32 @@ function renderSourceList() {
         />
       </div>
 
+      <div class="source-topic">
+        <span class="source-topic-label">小红书主题</span>
+        <span class="source-topic-title">${escapeHTML(title)}</span>
+      </div>
+
       <a
         class="source-link"
         href="${sourceUrl}"
         target="_blank"
         rel="noopener noreferrer"
       >
-        查看原始来源
+        查看小红书原页面
       </a>
     `;
 
     sourceList.appendChild(card);
   });
+}
+
+function escapeHTML(str) {
+  return String(str)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
 }
 
 optionButtons.forEach((btn) => {

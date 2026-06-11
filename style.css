@@ -584,3 +584,29 @@ body {
   transform: translate(-10%, -10%);
   display: block;
 }
+
+.source-topic {
+  margin: 10px 0 12px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: #fff7ec;
+  border: 1px solid #f4c28d;
+  text-align: left;
+}
+
+.source-topic-label {
+  display: inline-block;
+  margin-bottom: 4px;
+  color: #a74712;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.source-topic-title {
+  display: block;
+  color: #5f2f15;
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 800;
+  word-break: break-word;
+}
