@@ -251,7 +251,7 @@ saveBtn.addEventListener("click", async () => {
   });
 
   // 先尝试直接下载
-  tryDownloadBlob(blob, `鹅鸭腿鉴定结果-${score}分.png`);
+  // tryDownloadBlob(blob, `鹅鸭腿鉴定结果-${score}分.png`);
 
   // 再展示预览图，方便手机端长按
   const previewUrl = URL.createObjectURL(blob);
@@ -269,15 +269,13 @@ shareBtn.addEventListener("click", async () => {
     return;
   }
 
-  const { blob, dataUrl } = result;
+  const { blob } = result;
+
   const file = new File([blob], `鹅鸭腿鉴定结果-${score}分.png`, {
     type: "image/png"
   });
 
-  lastPosterBlob = blob;
-  lastPosterFile = file;
-
-  // 支持 Web Share API 的浏览器，直接分享图片
+  // 优先使用系统原生分享：支持时可以直接分享到微信、QQ、AirDrop 等
   if (
     navigator.share &&
     navigator.canShare &&
@@ -289,17 +287,29 @@ shareBtn.addEventListener("click", async () => {
         text: `我在鹅鸭腿鉴定局得了 ${score} / ${questions.length}，你也来试试。`,
         files: [file]
       });
-      return;
     } catch (err) {
       showToast("已取消分享");
-      return;
     }
+
+    return;
   }
 
-  // 不支持直接分享文件时，展示图片给用户长按保存/转发
-  posterPreview.src = dataUrl;
-  posterModal.classList.add("show");
-  showToast("当前浏览器不支持直接分享，请长按图片保存后发送");
+  // 兜底：不支持图片分享时，尝试分享文字和链接
+  if (navigator.share) {
+    try {
+      await navigator.share({
+        title: "你是鹅腿大师还是鸭腿冤种？",
+        text: `我在鹅鸭腿鉴定局得了 ${score} / ${questions.length}，你也来试试。`,
+        url: window.location.href
+      });
+    } catch (err) {
+      showToast("已取消分享");
+    }
+
+    return;
+  }
+
+  showToast("当前浏览器不支持直接分享，请先保存结果图再发送给朋友");
 });
 
 restartBtn.addEventListener("click", () => {
@@ -445,8 +455,8 @@ const RESULT_IMAGES = {
 };
 
 function getResultImage(score) {
-  if (score <= 3) return RESULT_IMAGES.low;
-  if (score <= 6) return RESULT_IMAGES.midlow;
+  if (score <= 5) return RESULT_IMAGES.low;
+  if (score <= 7) return RESULT_IMAGES.midlow;
   if (score <= 9) return RESULT_IMAGES.mid;
   if (score <= 11) return RESULT_IMAGES.high;
   return RESULT_IMAGES.perfect;
