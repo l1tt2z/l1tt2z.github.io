@@ -332,6 +332,8 @@ body {
   gap: 10px;
   max-width: 520px;
   margin: 0 auto;
+
+  z-index: 80;
 }
 
 .text-btn {
@@ -349,7 +351,7 @@ body {
   display: none;
   position: fixed;
   inset: 0;
-  z-index: 99;
+  z-index: 999;
 }
 
 .poster-modal.show {
